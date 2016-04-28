@@ -1,0 +1,73 @@
+<style>
+    @-webkit-keyframes demo {
+        50% {
+            border:solid orange 3px;
+            opacity:1;
+        }
+        100% {
+            border:solid white 3px;
+        }
+        
+    }
+    .demo:hover {
+        -webkit-animation-name: demo;
+        -webkit-animation-duration: .5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+    }   
+    .talk{
+        font-style:italic;
+    }
+   span{
+       font-style:italic;
+   } 
+   div {
+       display:inline-block;
+   }
+   div.demo {
+       
+       padding:2px;
+       margin-left:auto;
+       margin-right:auto;
+       /*position:absolute;*/
+       border:solid orange 3px;
+   }
+   div.buttons {
+       float:right;
+   }
+   #page2{
+       font-style :italic;
+   }
+   .hidden{
+       display:none;
+   }
+</style>
+
+<script>
+    function newPage() {
+        console.log('Hi There')
+        var page1 = document.getElementById("page1");
+        page1.classList.toggle("hidden");
+        var page2 = document.getElementById("page2");
+        page2.classList.toggle("hidden");
+    }
+</script>
+
+<body>
+    <div class="page" id="page1">
+        <div class="demo">
+            Hi my name is <span>Jordy</span>
+        </div>
+        <p class="talk">
+            I'm a hamster.
+            squeak, squeak!
+        </p>
+    </div>
+    <div class="page hidden" id="page2">
+        I live in a house/cage in Hamsterville.
+    </div>
+    <div class="buttons">
+        <button onclick="newPage()">next</button>
+    </div>
+
+</body>
