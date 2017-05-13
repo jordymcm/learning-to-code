@@ -1,0 +1,98 @@
+<script>
+   var name = prompt ( "" );
+   var greeting = name; 
+  // document.write(greeting);
+  
+   var name1 = prompt ( "" );
+   var greeting1 = name1;
+   //document.write(greeting1);
+
+
+    
+
+   
+ 
+  
+   alert(greeting);
+   
+   alert(greeting1);
+   
+</script>
+  
+  <body>
+      
+      <div>
+       
+      </div>
+   
+    
+       
+     
+ </body>
+ 
+ <style>
+ 
+   .right {
+   float:right;
+   /*padding-right:200px;*/
+ }
+      
+ </style>
+ 
+ <script>
+      // 1. Create the button
+var button = document.createElement("button");
+button.innerHTML = "ripli 1";
+
+// 2. Append somewhere
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+
+// 3. Add event handler
+button.addEventListener ("click", function() {
+ var name = prompt ( "" );
+    var greeting = name;
+  // document.write(greeting);
+   
+   alert (name);
+});
+
+/* Read 
+
+https://css-tricks.com/use-button-element/
+*/
+
+
+
+
+  // 1. Create the button
+var button = document.createElement("button");
+button.classList.add("right");
+button.innerHTML = "reply 2";
+
+// 2. Append somewhere
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+
+// 3. Add event handler
+button.addEventListener ("click", function() {
+ var name1 = prompt ( "" );
+    var greeting = name1;
+  // document.write(greeting);
+   
+   alert (name1);
+});
+
+/* Read 
+
+https://css-tricks.com/use-button-element/
+*/
+ </script>
+ 
+ 
+ <style>
+ body {
+  border: solid red 4px;
+ }
+  
+ </style>

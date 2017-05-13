@@ -35,6 +35,12 @@
    div.buttons {
        float:right;
    }
+    div.numbers {
+       float:right;
+       clear:both;
+       border:solid black 2px;
+   }
+   
    #page2{
        font-style :italic;
    }
@@ -64,10 +70,15 @@
         </p>
     </div>
     <div class="page hidden" id="page2">
-        I live in a house/cage in Hamsterville.
+        I live in a house/cage in Hamsterville squeak squeak.
     </div>
     <div class="buttons">
         <button onclick="newPage()">next</button>
+        <button onclick="newPage()">back</button>
     </div>
-
+    
+    <div class="numbers">
+        
+    <span>page 1</span>    
+    </div>
 </body>
