@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style type="text/css">
+            .hide {
+                display:none;
+            }
+                
+        </style>
+        
+      <script>
+          function Button1() {
+            var buttons=document.getElementsByClassName("hidingbuttons");
+               alert('showing buttons: ' + buttons.length);
+              for (i in buttons) {
+                    alert('showing button: ' + i);
+              }
+            // buttons.forEach(function(button){
+            //     alert('showing button');
+            //   button.classList.remove("hide")  
+            // });
+          }
+          
+      </script>      
+    </head>
+    
+    <body>
+        <button onclick="Button1()">
+          alert  
+        </button>
+        
+        <button class="hide hidingbuttons" onclick="Button2()">
+          b1  
+        </button>
+    </body> 
+</html>
+

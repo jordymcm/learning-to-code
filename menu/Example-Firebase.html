@@ -1,0 +1,42 @@
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+    
+        var score = "0";
+    
+    // setInterval(function(){
+        
+    //     var mouseY = event.clientY;
+    //     console.log(mouseY);
+    // }, 1000);
+    
+    
+
+        console.log("0");
+        
+        var config = {
+                apiKey: "AIzaSyBcAemkywkpJyIRAa-TBfnbyhrbCxr8GJ0",
+                authDomain: "test-13482.firebaseapp.com",
+                databaseURL: "https://test-13482.firebaseio.com",
+                projectId: "test-13482",
+                storageBucket: "",
+                messagingSenderId: "577292061885"
+            };
+          
+          
+          
+        // connect to your firebase database account
+        firebase.initializeApp(config);
+          
+        // getting refererence to the database
+        var database = firebase.database();
+        
+        var messagesRef = database.ref("clicker/saveCodes");
+            
+        messagesRef.orderByChild("user").equalTo("cat").on("value", function(data) {
+   
+           data.forEach(function(data) {
+              console.log("User: " + data.key + " = (" + data.val().user + ", " + data.val().code + ")");
+           });
+           
+        });
+</script>

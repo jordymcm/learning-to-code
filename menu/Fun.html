@@ -1,0 +1,513 @@
+
+
+<head>
+    <style>
+     .hide {
+        display: none;
+    
+    }
+    
+    .show {
+        display: block;
+    
+    }
+    
+    .mbs {
+        background-color: #3288ba;
+        border: #3288ba;
+        color: #f2f2f2;
+        border-radius: 10px;
+        min-height: 40px;
+        width: 100px;
+        font-size: 22px;
+    }
+    
+    .next {
+       width :200;
+    }
+    
+    .textb {
+        margin: 10px;
+        height: 30px;
+        font-size: 18;
+        border-radius: 5px;
+        border: #3288ba;
+        padding: 3px;
+    }
+    
+    .passwordstart {
+        border-radius: 5px;
+        height: 30px;
+        font-size: 18;
+        border: #3288ba;
+        padding: 3px;
+        margin: 10px;
+    }
+    
+    .senter {
+        /*margin-left: auto;*/
+    }
+    
+    
+    body {
+        background-color: #726f6f;
+    }
+    
+    .ng {
+        height: 50px;
+    }
+    
+    .addng {
+        height: 42px;
+        width: 42px;
+        font-size: 40px;
+        border:none;
+        background: none;
+        color: #ffffff;
+    }
+    
+    
+    </style>
+    
+    <script>
+    
+    
+        var usernames = [];
+        var passwords = [];
+        var buttons = [];
+        var logn = ("");
+        
+        var message = [];
+        var to = [];
+        var from = [];
+        
+        
+        
+        
+        
+        var list = [];
+        
+        //remoov ^
+        
+        
+        // var real = ("cat");
+        
+        // window.onload = function() {
+        
+        //     var nd = document.createElement("div");
+        //     var n = document.getElementById("b");
+            
+        //     if (n !== null){
+        //         console.log("div");
+        //         n.appendChild(nd);
+        //     }
+        //  }       
+        
+        
+        
+        function test_h() {
+            var box = document.getElementById("div-s");
+            box.classList.add("hide");
+            box.classList.remove("show");
+        }
+            
+        function h1_h() {
+            var newas1 = document.getElementById("newas");
+            newas1.classList.add("hide")
+            newas1.classList.remove("show")
+        }
+            
+        function newah(){
+                
+                var ndiv = document.getElementById("new");
+                ndiv.classList.add("hide")
+                ndiv.classList.remove("show")
+                
+            }   
+        
+        
+        
+        window.onload = function() {
+            newah();
+            h1_h();
+            test_h();   
+        }
+            
+            
+            
+            
+            
+        
+        
+        
+            
+            
+            
+            
+        
+        
+        function test_s() {
+          var box = document.getElementById("div-s");
+          box.classList.add("show")
+          box.classList.remove("hide")
+          
+        }
+            
+            
+            function h1_s() {
+                var newaso = document.getElementById("newas");
+                newaso.classList.add("show")
+                newaso.classList.remove("hide")
+            }
+            
+            
+            
+            // var iu = "2";
+            
+            
+            
+            
+            function done(){
+                var spassword = document.getElementById("passwordbox-s").value;
+                var testing = ("cat")
+                console.log("YAY!")
+            
+                // console.log(spassword);
+                // alert('DEBUG: ' + spassword + ' === ' + "cat" + " : " + (spassword === "cat"));
+                // console.log(sin);
+                
+                if (spassword === "cute hamster friend") {
+                    test_h();
+                    console.log(buttons)
+                    
+                    if(buttons.indexOf("4") > -1 ) {
+                       newas();
+                    }
+                    
+                    if(buttons.indexOf("3") > -1 ) {
+                       h1_s();
+                    }
+                }    
+            
+            function dac(){
+                var nau = document.getElementById("username1").value;
+                var nap = document.getElementById("password1").value;
+                var napc = document.getElementById("password2").value;
+                
+                if (nap === napc){
+                    usernames.push(nau);
+                    savea("users", usernames);
+                    
+                    
+                }
+            }
+            
+            function test(){
+                // sa
+                
+            }
+                    
+                    // console.log(buttons.indexOf("0"))
+                    
+                    // var vel = JSON.stringify(buttons.indexOf("0"))
+                    
+                    // console.log(vel)
+                    
+                    
+                    
+                    // var number = ("0");
+                    // var re = (buttons.length);
+                    
+                    // while(re > 0) {
+                       
+                    //     re = re-1
+                    //     var number = number-1;
+                    //     var answer = buttons[number];
+                    //     if (answer = "0") {
+                    //         newas(); 
+                    //   }
+                        
+                    // }
+                  
+                    
+                    
+                    
+                    // if () {
+                    //   newas();  
+                    // }
+                        
+                    
+                    // console.log("corect!");
+            
+            }
+            
+            function newas(){
+                
+                var ndiv = document.getElementById("new");
+                ndiv.classList.add("show")
+                ndiv.classList.remove("hide")
+                
+                list.push();
+            }
+            
+            function savea (vn, usernames) {
+            
+                var uname = document.getElementById("username").value;
+                // usernames.push("cat");
+                // console.log(usernames);
+                
+                localStorage.setItem(vn, JSON.stringify(usernames));
+                
+                usernames = loada("name");
+                message = loada("allm");
+                to = loada("mto");
+                from = loada("mf");
+            
+            }
+            
+            function loada (into) {
+                var a = JSON.parse(localStorage.getItem(into));
+                
+                
+                return a;
+                // if (a !== null) {
+                //     usernames = a;
+                    
+                    // console.log(usernames)
+                    
+                // }
+            }
+            
+            // function set(namev){
+                
+            // }
+            
+            usernames = loada("name");
+            message = loada("allm");
+            to = loada("mto");
+            from = loada("mf");
+            
+    //         function wait(ms){
+    //   var start = new Date().getTime();
+    //   var end = start;
+    //   while(end < start + ms) {
+    //      end = new Date().getTime();
+    //   }
+    // }
+    //         console.log("B");
+    //         wait(7000);
+    //         console.log("D");
+            
+            // newah();
+            // test_h();
+            // loada();
+            // h1_h();
+            
+            
+            
+    
+            
+    
+            
+    
+            function testiing(){
+                alert("YAY!!!");
+            }
+            
+    
+            
+        
+        function signin() {
+            buttons.push("4")
+            var sin = "0";
+             
+            
+            var div = document.getElementById("start");
+            div.classList.add("hide")
+            test_s();
+        }
+        
+        function signup(){
+            
+            buttons.push("3")
+            var sin = "1";
+            
+            var div = document.getElementById("start");
+            div.classList.add("hide");
+            test_s();
+        }
+        
+        function check(){
+            var u = document.getElementById("username1").value;
+            var p1 = document.getElementById("password1").value;
+            var p2 = document.getElementById("password2").value;
+            
+            if (u === ""){
+               alert("You need a username") 
+                
+            }else{
+                
+                if (p1 || p2 === ""){
+                    
+                    
+                    if (p1 !== "" && p2 === ""){
+                        
+                        alert("You need to comferm password")
+                    }else {
+                        if (p1 !== p2) {
+                            alert("password difrant");
+                        }
+                     
+                    
+                    if(p1 === "" && p2 === "") {
+                     
+                        alert("You need a password");
+                    }else{
+                
+                
+                    if (p1 === p2){
+                        
+                        usernames.push(u);
+                        console.log(usernames);
+                        // savea("name")
+                        savea("name", usernames);
+                    
+                        }
+                    }    
+                    
+                    
+                    
+                    
+                    }    
+                    
+                }
+            }
+        }
+        
+        function testfa(){
+            var ya = document.getElementById("username").value;
+            var pass = document.getElementById("password");
+            usernames = loada("name");
+            
+            if (usernames.indexOf(ya) > -1 ) {
+                logn = ya;
+                console.log(logn);
+                newah();
+                inbox();
+            }else {
+                if (ya !== ""){
+                    alert("No account with the name: \""  + ya + "\" exidts");
+                }
+            }
+        }
+        
+        
+        // var divcs = document.createElement("div");
+        
+        
+//         var md = document.createElement("div");
+//         md.style.width = "100px";
+//         md.style.height = "100px";
+//         md.style.background = "red";
+//         md.style.color = "white";
+//         md.innerHTML = "Hello";
+
+// document.getElementById("main").appendChild(md);
+
+       
+        
+        
+        
+        function inbox(){
+            
+            message = loada("allm");
+            to = loada("mto");
+            from = loada("mf");
+            
+            // var nd = document.createElement("div");
+            // var n = document.getElementById("b");
+            
+            if (n !== null){
+                
+                
+                showi ();
+                // var nd = document.createElement("div");
+                // var n = document.getElementById("con");
+                // nd.className = "di";
+                // nd.id = "i";
+                // nd.innerHTML = "Hello";
+                // n.appendChild(nd);
+                // console.log("div");
+                // n.appendChild(nd);
+            }
+          
+            // var divElement = document.createElement("Div");
+            // divElement.id = "divID";
+            
+            
+            // divElement.style.textAlign = "center";
+            // divElement.style.fontWeight = "bold";
+            // divElement.style.fontSize = "smaller";
+            // divElement.style.paddingTop = "15px";
+            
+        }
+        
+        
+        
+        function showi(){
+            
+        }
+        
+    </script>
+
+</head>
+
+<link rel="icon" href="iconfm.PNG">
+
+<body id="b">
+    
+    <div id="div-s">
+        <input id="passwordbox-s" class="passwordstart" type="password" name="password-start" placeholder="Password">
+        <button class="mbs senter" onclick=done()>Done</button>
+    </div>
+    
+    <div id=start>
+        <button class="mbs" onclick=signin()>Sign In</button>
+        <button class="mbs" onclick=signup()>Sign Up</button>
+    </div>
+    
+    <div id=new class=next>
+        <input id="username" class="textb" type="username" name="username-1" placeholder="Username">
+        <input id="password" class="textb" type="password" name="password-1" placeholder="Password">
+        <button class="mbs" onclick=testfa()>Done</button>
+    </div>
+    
+    <div id=newas class=next>
+      <input id="username1" class="textb" type="username" name="username-2" placeholder="Username">
+        <input id="password1" class="textb" type="password" name="password-2" placeholder="Password">
+        <input id="password2" class="textb" type="password" name="password-3" placeholder="Conferm Password">
+        <button class="mbs" onclick=check()>Done</button>
+        
+    </div>
+    
+    <div id="newm">
+        
+    </div>
+    
+    <div id="con">
+        
+    </div>
+        <div class="ng">
+            <font size="7px" face="arial">New groupe</font>
+            <button class="addng">+</button>
+        </div>
+    
+    <title>JMail</title>
+        
+    <meta charset="utf-8">
+
+</body>
+
+<script>
+    
+</script>

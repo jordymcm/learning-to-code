@@ -1,0 +1,89 @@
+<html>
+    <head>
+       <script>
+            function greet_person(event){
+               if (event.keyCode == 13){
+                   var ask=document.getElementById("ask");
+                   var name=ask.value;
+                   var greeting=document.getElementById("greeting");
+                   greeting.innerHTML = "hello "+name;
+                   ask.value="";
+                   var clear=document.getElementById("clear");
+                   clear.classList.add('show')
+               }
+            }
+       
+            function div1_clicked(){
+                //alert('Please type something')
+            }
+            
+            function clear_words(){
+            var greeting=document.getElementById("greeting");
+            greeting.innerHTML ="";
+            var clear=document.getElementById("clear");
+               clear.classList.remove('show') 
+            }
+            
+           
+            //alert('hello');
+        </script>
+        
+        <style type="text/css">
+            .div1{
+                background:blue;
+                width:300px;
+                height:35px;
+                margin-top:20px;
+                border:solid black 3px;
+            }
+            input::placeholder{
+                color:lightgrey;
+            }
+            input.ask{
+                width:290;
+                margin-top:5px;
+                margin-left:5px;
+                height:25px;
+            }
+            #greeting{
+                display:inline-block;
+                min-height:30px;
+                width:300px;
+                /*border:solid black 3px;*/
+                margin-top:5px;
+                padding:10px;
+                clear:both;
+                float:left;
+            }
+            button.clear{
+                clear:both;
+                float:left;
+                margin-top:4px;
+                display:none;
+            }
+            button.show{
+            display:block;    
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <div class="div1">
+            <!--<label for="name">please type your name</label>-->
+            <input title="Please type your name" 
+                    placeholder="your name goes here" type="text"
+                    name="name" class="ask" id="ask"
+                    onkeyup="greet_person(event)"/>
+        </div>
+        
+        <div id="greeting">
+            
+        </div>
+         <button onclick="clear_words()"
+                 id="clear" class="clear">Clear</button>
+    </body>
+</html>
+
+
+

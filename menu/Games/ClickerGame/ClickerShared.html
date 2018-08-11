@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <style>
+        
+        /*z-index = 6 max = 990*/
+        
+        #infoText {
+            position:relative;
+            width:auto;
+            height:50vmin;
+            margin:4px;
+            overflow: scroll;
+            top:0.6vh;
+            color:#ffffff;
+            font-size:2vmin;
+            font-family:arial
+        }
+        
+        #stop {
+            position:absolute;
+            
+            z-index:990;
+            top:0px;
+            left:0px;
+            width:99vw;
+            height:99vh;
+            
+        }
+        
+        #info {
+            position:absolute;
+            top:calc(50vh - 30vmin);
+            left:calc(50vw - 20vmin);
+            z-index:999;
+            box-sizing:border-box;
+            width:40vmin;
+            height:60vmin;
+            background:#ff8c3f;
+            border-radius:1.5vmin;
+        }
+        
+        #saveButton{
+            position:absolute;
+            right:2vh;
+            bottom:2vh;
+            height:5vmin;
+            width:10vmin;
+            background:#5e9af9;
+            color:#ffffff;
+            text-align: center;
+            font-size:4vmin;
+            font-family:arial
+        }
+        
+        #signInButton {
+            position:absolute;
+            left:0vmin;
+            height:5vmin;
+            width:40vmin;
+            background:#5e9af9;
+            color:#ffffff;
+            text-align: center;
+            font-size:4vmin;
+            font-family:arial
+            
+            
+        }
+         #makeAcountButton {
+            position:absolute;
+            left:41vmin;
+            height:5vmin;
+            width:40vmin;
+            background:#5e9af9;
+            color:#ffffff;
+            text-align: center;
+            font-size:4vmin;
+            font-family:arial
+            
+            
+        }
+        
+        #around {
+            position:relative;
+            height:7vmin;
+            width:81vmin;
+            margin:auto;
+        }
+        
+        
+        #showInfo{
+            position:absolute;
+            z-index: 4;
+            top:calc(90vh - 5vmin);
+            left:0px;
+            height:10vmin;
+            width:99vw;
+            /*left:calc(50vw - 5vmin);*/
+            text-align: center;
+            font-size:3vmin;
+            font-family:arial;
+        }
+    
+        
+        #clicker{
+            
+            /*position:absolute;*/
+            z-index: 500;
+            
+            height:10vmin;
+            width:10vmin;
+            /*background:red;*/
+            /*border-radius:50%;*/
+            margin: auto;
+            position: relative;
+            top:calc(50vh - 10vmin);
+        }
+        
+        #clickerIcon {
+            height:30vmin;
+            /*width:9vmin;*/
+        }
+        
+        #shopIcon {
+            /*position:absolute;*/
+            width:5vmin;
+        }
+        
+        #b {
+            position: absolute;
+            z-index: 5;
+            width:99vw;
+            height:75vh;
+            top:14vh;
+            left:0px;
+            
+            
+        }
+        
+        #detect{
+            position: absolute;
+            z-index: 2;
+            height:5vh;
+            width:91vw;
+        }
+        
+        #topBare {
+           
+            border-radius:3vmin;
+            /*background:#478dff;*/
+            background:#ff8c3f;
+            width:90vw;
+            height:20vh;
+            position: absolute;
+            z-index:3;
+            
+            
+            
+            
+            /*-webkit-transition: top 2s; */
+            /*^For Safari 3.1 to 6.0^ */
+            
+            transition: top 2s;
+            
+            
+            
+        }
+        
+        #helpButton {
+            position:absolute;
+            z-index: 6;
+            left:calc(99vw - 6vmin);
+            bottom:1vh;
+            width:6vmin;
+            height:6vmin;
+            background:#5e9af9;
+            text-align:center;
+            font-size:5vmin;
+            color:#ffffff;
+        }
+        
+        #shopButton {
+            position:absolute;
+            z-index: 6;
+            left:calc(99vw - 6vmin);
+            bottom:8vh;
+            width:6vmin;
+            height:6vmin;
+            background:#5e9af9;
+            text-align:center;
+            font-size:5vmin;
+            color:#ffffff;
+        }
+        
+        
+        #closeInfoBoxButton {
+            
+            right:2vmin;
+            bottom:2vmin;
+            background:#5e9af9;
+            width:10vmin;
+            height:4vmin;
+            text-align:center;
+            font-size:3vmin;
+            color:#ffffff;
+        }
+        
+        #closeShopButton {
+            position:absolute;
+            right:2vmin;
+            bottom:2vmin;
+            /*margin:3px;*/
+            background:#5e9af9;
+            width:10vmin;
+            height:4vmin;
+            text-align:center;
+            font-size:3vmin;
+            color:#ffffff;
+        }
+        
+        #shop {
+            border-radius:3vmin;
+            background:#ff8c3f;
+            width:90vmin;
+            height:70vmin;
+            position: absolute;
+            z-index:991;
+            
+            top:calc(50vh - 35vmin);
+            left:calc(50vw - 45vmin);
+        }
+        
+        #upgrades {
+            width:90vmin;
+            height:60vmin;
+            position: absolute;
+        }
+        
+        #u1p {
+            height:6vmin;
+            float:left;
+            margin:0.5vmin;
+        }
+        
+        #u2p {
+            width:6vmin;
+            float:left;
+            margin:0.5vmin;
+        }
+        
+        #u3p {
+            width:6vmin;
+            float:left;
+            margin:0.5vmin;
+        }
+        
+        .name {
+            position:absolute;
+            top:0.3vmin;
+            left:0.3vmin;
+            width:20vmin;
+            height:1vmin;
+            text-align:left;
+            font-size:1vmin;
+            font-family:arial;
+            
+        }
+        
+        
+        .upgrade {
+            position:relative;
+            margin:1vmin;
+            height:7vmin;
+            width:40vmin;
+            background:#5e9af9;
+            color:#ffffff;
+            text-align: center;
+            font-size:1vmin;
+            padding-top:2vmin;
+        }
+        
+         .amountOaned {
+            position:absolute;
+            right:0px;
+            color:#ffffff;
+            text-align:center;
+            font-size:4vmin;
+            font-family:arial;
+            height:7vmin;
+            width:7vmin;
+            
+        }
+        
+        .upgradeText {
+            position:relative;
+            height:3.5vmin;
+            width:30vmin;
+            float:right;
+            
+            /*background:red;*/
+            
+        }
+        
+        .button {
+            /*position:absolute;*/
+            border-radius:0.4vmin;
+            font-family:arial;
+        }
+        
+        .namal {
+
+            top:-20vh;
+            
+        }
+        
+        .dawn {
+
+            top:-10vh;
+            
+        }
+        
+        .show {
+            display:block;
+        }
+        
+        .hide {
+            display:none;
+        }
+        
+       
+        
+        
+        
+    </style>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        setTimeout(function(){
+
+            checkLink();
+                
+        }, 1000);
+    
+        function playGame(){
+            
+            
+            
+            setInterval(function(){
+                
+                score = score + BPS;
+                update();
+            }, 1000);
+            
+            setTimeout(function(){
+                loggedInUser = localStorage.getItem("clickerGameUser");
+                
+                update();
+                upLoadData();
+                console.log(loggedInUser)
+                databaceUpdate(loggedInUser, function(data){
+                    
+                    console.log(data.key)
+                    setVars(data.val().code);
+                    
+                });
+                
+                
+                
+            }, 1000);
+
+    
+        }
+        
+        
+    
+    
+    console.log("0");
+    var score = 0;
+    var BPS = 0;
+    var BPC = 1;
+    var YN = "N";
+    var test = "";
+    var loggedInUser = "";
+    
+    
+    var P1H = 0;
+    var P2H = 0;
+    var P3H = 0;
+    //Set Price
+    var P1 = 10;
+    var P2 = 100;
+    var P3 = 600;
+    
+    //Set original price
+    var P1O = P1;
+    var P2O = P2;
+    var P3O = P3;
+    
+    //End set price
+        
+    var config = {
+            apiKey: "AIzaSyBcAemkywkpJyIRAa-TBfnbyhrbCxr8GJ0",
+            authDomain: "test-13482.firebaseapp.com",
+            databaseURL: "https://test-13482.firebaseio.com",
+            projectId: "test-13482",
+            storageBucket: "",
+            messagingSenderId: "577292061885"
+        };
+      
+      
+      
+        // connect to your firebase database account
+        firebase.initializeApp(config);
+          
+        // getting refererence to the database
+        var database = firebase.database();
+    
+    function right(name, save) {
+    
+        var messagesRef = database.ref("clicker/saveCodes");
+        var newMessageRef = messagesRef.push();
+        
+        newMessageRef.set({
+            "user":name, 
+            "code":save
+        });
+            
+    }
+    
+    function databaceUpdate(name, callback) {
+        
+        console.log("databaceUpdate " + name)
+        
+        var messagesRef = database.ref("clicker/saveCodes");
+         
+        var result
+         
+        messagesRef.orderByChild("user").equalTo(name).on("value", function(data) {
+   
+            data.forEach(function(data) {
+                result = data.key;
+                console.log("-" + result)
+                callback(data)
+            });
+           
+        });
+        
+    }
+    
+    function save() {
+        
+        // savecodefa
+        
+        console.log(test)
+        
+        databaceUpdate(loggedInUser, function(data){
+            
+                    var savecode = {
+                        "score":score,
+                        "BPS":BPS,
+                        "P1":P1,
+                        "P1H":P1H,
+                        "P2":P2,
+                        "P2H":P2H,
+                        "P3":P3,
+                        "P3H":P3H
+                        
+                    }
+                    
+                    console.log(P1 + "1")
+                    // databaceReplace(data.key, loggedInUser, "!!" + score + "!@" + BPS + "!#" + P1 + "!$" + P1H + "!%" + P2 + "!^" + P2H + "!&" + P3 + "!*" + P3H + "!(");
+                    databaceReplace(data.key, loggedInUser, savecode);
+                    console.log(P1 + "2")
+                });
+        
+        
+        
+        // databaceUpdate(loggedInUser, function(key){
+        //      test = key;
+        //      console.log("key: " + test + " " + P1);
+             
+        //      console.log(P1 + "test")
+        //      console.log("a")
+        // });
+    
+    }
+    
+    function databaceReplace(remove, name, code) {
+        // alert(remove + ", " + name + ", " + code + ", " + loggedInUser);
+        var messagesRef = database.ref("clicker/saveCodes/" + remove);
+        var deleteMessageRef = messagesRef.set({"user":name, "code":code});
+        
+    }
+    console.log("1 a");
+    
+    //right("cat", "hamster");
+    
+    
+    
+    function clickerClicked() {
+        score = score + BPC;
+        console.log(score);
+        update();
+    }
+    
+    function openTopBare() {
+        var element = document.getElementById("topBare");
+        element.classList.add("dawn");
+        element.classList.remove("namal");
+    }
+    
+    function closeTopBare() {
+        document.getElementById("b").onmouseover = function () {
+            var element = document.getElementById("topBare");
+            element.classList.add("namal");
+            element.classList.remove("dawn");
+            console.log("close");
+        }
+        
+    
+        
+            
+    }
+    
+    function update() {
+        document.getElementById("showInfo").innerHTML =  " BPS: " + BPS.toFixed(1)  + "<br>" + "Score: " + Math.floor(score);
+    }
+    
+    function updateShop() {
+         document.getElementById("U1price").innerHTML = "Price: " + P1.toFixed(1);
+         document.getElementById("amountOaned1").innerHTML = P1H;
+ 
+         
+         document.getElementById("U2price").innerHTML = "Price: " + P2.toFixed(1);
+         document.getElementById("amountOaned2").innerHTML = P2H;
+         
+         document.getElementById("U3price").innerHTML = "Price: " + P3.toFixed(1);
+         document.getElementById("amountOaned3").innerHTML = P3H;
+         
+    }
+    
+    
+
+    
+    
+
+    
+    function checkLink() {
+        console.log("checking");
+        var myUrl = window.location.href;
+        var indexUrl = myUrl.indexOf("mode") + 5;
+        var urlData = myUrl.substring(indexUrl);
+        console.log(urlData)
+        
+        if (urlData === "game") {
+                playGame();
+                showAllGame();
+                hideMainMenu();
+                hideSignInMenu();
+                hideNewAcountMenu();
+        
+        }else {
+            
+            if(urlData === "signin"){
+                
+                hideAllGame();
+                hideMainMenu();
+                showSignInMenu();
+                hideNewAcountMenu();
+                
+            }else {
+                
+                if(urlData === "newAccount"){
+                
+                hideAllGame();
+                hideMainMenu();
+                hideSignInMenu();
+                showNewAcountMenu();
+                
+                }else{
+                    
+                    hideAllGame();
+                    showMainMenu();
+                    hideSignInMenu();
+                    hideNewAcountMenu();
+                }
+            }
+        }
+    
+    }
+    
+    
+    
+    
+    
+    
+    function hideAllGame() {
+        var element = document.getElementById("game");
+        element.classList.add("hide");
+        element.classList.remove("show");
+    }
+    
+    function showAllGame() {
+        var element = document.getElementById("game");
+        element.classList.add("show");
+        element.classList.remove("hide");
+    }
+    
+    
+    function showMainMenu() {
+        var element = document.getElementById("mainMenu");
+        element.classList.add("show");
+        element.classList.remove("hide");
+    }
+    
+    function hideMainMenu() {
+        var element = document.getElementById("mainMenu");
+        element.classList.add("hide");
+        element.classList.remove("show");
+    }
+    
+    function showSignInMenu() {
+        var element = document.getElementById("signInMenu");
+        element.classList.add("show");
+        element.classList.remove("hide");
+    }
+    
+    function hideSignInMenu() {
+        var element = document.getElementById("signInMenu");
+        element.classList.add("hide");
+        element.classList.remove("show");
+    }
+    
+    function showInfoBox() {
+        var element = document.getElementById("info");
+        element.classList.add("show");
+        element.classList.remove("hide");
+        
+        var element = document.getElementById("stop");
+        element.classList.add("show");
+        element.classList.remove("hide");
+    }
+    
+    function hideInfoBox() {
+        var element = document.getElementById("info");
+        element.classList.add("hide");
+        element.classList.remove("show");
+        
+        var element = document.getElementById("stop");
+        element.classList.add("hide");
+        element.classList.remove("show");
+    }
+    
+    function showNewAcountMenu() {
+        var element = document.getElementById("newAcountMenu");
+        element.classList.add("show");
+        element.classList.remove("hide");
+    }
+    
+    function hideNewAcountMenu() {
+        var element = document.getElementById("newAcountMenu");
+        element.classList.add("hide");
+        element.classList.remove("show");
+    }
+    
+    
+    
+    
+    
+    
+    
+    //link for opening game
+    
+    function startupGame(place) {
+        
+        // location.replace("https://learn-to-code-jordymcm.c9users.io/menu/Clicker.html")
+        
+        
+        
+        if(window.location.href.substring(window.location.href.indexOf("=") + 1) === "newAccount") {
+            localStorage.setItem("clickerGameUser", document.getElementById("acountName").value);
+        } else {
+            localStorage.setItem("clickerGameUser", document.getElementById("user").value);
+        }
+        
+        window.location.replace("/menu/ClickerShared.html?mode=" + place);
+        
+        
+    }
+    
+    function openShop() {
+        updateShop();
+        var element = document.getElementById("shop");
+        element.classList.add("show");
+        element.classList.remove("hide");
+        
+        var element = document.getElementById("stop");
+        element.classList.add("show");
+        element.classList.remove("hide");
+        
+        
+
+    }
+    
+    function closeShop() {
+        var element = document.getElementById("shop");
+        element.classList.add("hide");
+        element.classList.remove("show");
+        
+        var element = document.getElementById("stop");
+        element.classList.add("hide");
+        element.classList.remove("show");
+    }
+    
+    function changeBPS(changBy, name) {
+        YN = "N";
+        if (score >= eval(name)) {
+            YN = "Y";
+            BPS = BPS + changBy;
+            console.log("byed")
+            
+            
+        }
+    }
+    
+    function upLoadData() {
+        
+        
+        
+        var messagesRef = database.ref("clicker/saveCodes");
+            
+        messagesRef.orderByChild("user").equalTo(loggedInUser).on("value", function(data) {
+            
+            
+            data.forEach(function(data) {
+                // alert(data.val().user)
+                
+                console.log("found code " + data.val().code)
+                setVars(data.val().code);
+               
+              //console.log("User: " + data.key + " = (" + data.val().user + ", " + data.val().code + ")");
+            });
+           
+        });
+        
+    }
+    
+    function setVars(data) {
+        // alert(data)
+        
+        // savecodefa
+        if (data !== "") {
+            console.log(data + " testing")
+
+            // score = parseFloat(data.substring(data.indexOf("!!") + 2, data.indexOf("!@")) + "<br>")
+            // BPS = parseFloat(data.substr(data.indexOf("!@") + 2, data.indexOf("!#") - 5) + "<br>")
+            
+            // console.log(data.indexOf("!#") + 2 + " substring" + " | " + data.indexOf("!$") + " | " + data.substring(8, 11))
+            
+            // P1 = parseFloat(data.substr(data.indexOf("!#") + 2, data.indexOf("!$")));
+            // P1H = parseFloat(data.substr(data.indexOf("!$") + 2, data.indexOf("!%")));
+            // P2 = parseFloat(data.substr(data.indexOf("!%") + 2, data.indexOf("!^")));
+            // P2H = parseFloat(data.substr(data.indexOf("!^") + 2, data.indexOf("!&")));
+            // P1 = parseFloat(data.substr(data.indexOf("!&") + 2, data.indexOf("!*")));
+            // P3H = parseFloat(data.substr(data.indexOf("!*") + 2, data.indexOf("!(")));
+            
+            
+            
+            score = data.score
+            BPS = data.BPS
+            
+            P1 = data.P1
+            P1H = data.P1H
+            P2 = data.P2
+            P2H = data.P2H
+            P3 = data.P3
+            P3H = data.P3H
+           
+            
+        //console.log(data.substr(data.indexOf("!@") + 2, data.indexOf("!#") - 5) + " saved BPS")
+        }
+        console.log(data)
+    }
+    
+    function makeAcount(name) {
+        right(name, "");
+        startupGame("game");
+    }
+    
+    function displayError() {
+        document.getElementById("displayErrorText").innerHTML = "Username Or Password Allredy Used";
+    }
+    
+    function newAcount() {
+        var name = document.getElementById("acountName").value;
+        
+        var messagesRef = database.ref("clicker/saveCodes");
+        
+            
+        messagesRef.orderByChild("user").equalTo(name).on("value", function(data) {
+            
+            if(!data.numChildren() > 0) {
+                // callback(true)
+                makeAcount(name);
+               
+            }else {
+                // callback()
+                displayError();
+            }
+           
+        });
+    }
+    
+    
+    function P1C() {
+        if (YN === "Y") {
+            P1 = P1 + (0.03 * P1)
+            P1H = P1H + 1;
+            console.log(P1.toFixed(2))
+        }
+    }
+    
+    function P2C() {
+        if (YN === "Y") {
+            P2 = P2 + (0.03 * P2)
+            P2H = P2H + 1;
+            console.log(P2.toFixed(2))
+        }
+    }
+    
+     function P3C() {
+        if (YN === "Y") {
+            P3 = P3 + (0.03 * P3)
+            P3H = P3H + 1;
+            console.log(P3.toFixed(2))
+        }
+    }
+    
+    function pay(vn) {
+        if (YN === "Y") {
+            score = score - eval(vn)
+            update();
+        }
+    }
+       
+    
+    
+</script>
+    
+    
+</head>
+
+<body>
+    
+    <title>C2</title>
+
+    <div id="game" class="show">
+        
+        
+        <div id="shop" class="hide">
+            <div id="upgrades">
+                <!--<button onclick="changeBPS(1, 'P1'); pay('P1'); P1C()">+</button>-->
+                
+                <div class="upgrade button" id="u1" onclick="changeBPS(0.1, 'P1'); pay('P1'); P1C(); updateShop()">
+                    <img src="ClickerGame-upgrade1.svg" id="u1p"></img>
+                    <span class="name">Blackberry Finder</span>
+                    
+                    <span class="upgradeText" id="U1price"></span>
+                    <span class="upgradeText" id=U1BPS>BPS: 0.1</span>
+                    <span class="amountOaned" id="amountOaned1">0</span>
+                </div>
+                
+                <div class="upgrade button" id="u2" onclick="changeBPS(1, 'P2'); pay('P2'); P2C(); updateShop()">
+                    <img src="ClickerGame-upgrade2.svg" id="u2p"></img>
+                    <span class="name">Blackberry Bush</span>
+                    
+                    <span class="upgradeText" id="U2price"></span>
+                    <span class="upgradeText" id=U2BPS>BPS: 1</span>
+                    <span class="amountOaned" id="amountOaned2">0</span>
+                </div>
+                
+                <div class="upgrade button" id="u3" onclick="changeBPS(4, 'P3'); pay('P3'); P3C(); updateShop()">
+                    <img src="ClickerGame-upgrade3.svg" id="u3p"></img>
+                    <span class="name">Blackberry Machine</span>
+                    
+                    <span class="upgradeText" id="U3price"></span>
+                    <span class="upgradeText" id=U3BPS>BPS: 4</span>
+                    <span class="amountOaned" id="amountOaned3">0</span>
+                </div>
+                
+            </div>
+            
+            
+            <div class="button" id="closeShopButton" onclick="closeShop()">
+                Close
+            </div>
+        </div>
+        
+        <div onclick="openTopBare()" onmouseover="openTopBare()" id="detect">
+            
+        </div>
+        
+        <div id="clicker" onclick="clickerClicked()">
+            <img src="ClickerGame-clickerIcon.svg" id="clickerIcon"></img>
+        </div>
+        
+        <div onmouseout="closeTopBare()" onblur="closeTopBare()" id="topBare" class="namal">
+            <div class="button" id="saveButton" onclick="save()">Save</div>
+        </div>
+        
+        <div id="showInfo">
+            
+        </div>
+        
+        <div id="b"></div>
+        
+        <div id="info"  class="hide">
+            <div id="infoText">
+                erhlsafluuhdufdfdlmlj
+                jdjdjdjdjifheriuhfiueneufh
+                rgrghruhfjddfuewhfuewh
+                fyugyugftyddyddhfhfhhfhfk
+                gerhlihaeihuigiurslnfkjsfhgwdsj
+                fhhlshfuiherufdjherjdfhbjhcsdb
+            </div>
+            
+            <div class="button" id="closeInfoBoxButton" onclick="hideInfoBox()">
+                Close
+            </div>
+        </div>
+        
+        <div class="button" id="helpButton" onclick="showInfoBox()">
+            ?
+        </div>
+        
+        <div id="shopButton" class="button" onclick="openShop()">
+            <img id="shopIcon" src="ClickerGame-shopIcon.svg"></img>
+        </div>
+        
+        <div id="stop" class="hide">
+            
+        </div>
+    </div>
+    
+    
+    <!--<div>-->
+    <!--    <button onclick="startupGame('game')">test</button>-->
+    <!--    <input type="text" id="user"></input>-->
+    <!--    <button onclick=upLoadData()>upload</button>-->
+
+       
+    <!--</div>-->
+    
+    <div id="mainMenu" class="show">
+        <div id="around">
+            <div onclick="startupGame('signin')" id="signInButton" class="button">
+                Sign In
+            </div>
+            
+            <div id="makeAcountButton" class="button" onclick="startupGame('newAccount')">
+                Make Acount
+            </div>
+        </div>
+    </div>
+    
+    <div id="signInMenu" class="show">
+        <input type="text" id="user"></input>
+        <button onclick="startupGame('game')">done</button>
+    </div>
+    
+    <div id="newAcountMenu">
+        <input type="text" id="acountName"></input>
+        <button onclick="newAcount()">done</button>
+        <span id="displayErrorText"></span>
+    </div>
+</body>

@@ -1,0 +1,63 @@
+<body id="b">
+    <button class="t" onclick=r()>
+        hello
+    </button>
+    
+    <!--<div class="adiv">-->
+    <!--    cats are cute-->
+    <!--</div>-->
+    
+    <style>
+    
+    .hide {
+        display: none;
+    }
+    
+    .di {
+        background :red;
+        border : blue;
+        height :100px;
+        width : 100px;
+    }
+    
+    .adiv {
+        background: yellow;
+        border :orange;
+        border :3px;
+        height :100px;
+        width :50;
+    }
+    
+    
+    </style>
+</body>
+
+<script>
+    var nd = document.createElement("div");
+    var n = document.getElementById("b");
+    nd.className = "di";
+    nd.id = "i";
+    n.appendChild(nd);
+    
+    
+    function r() {
+        // var nd = document.createElement("div");
+        var a = document.getElementById("i");
+        if (a !== null){
+            console.log(a);
+            a.classList.add("hide");
+            // var b = document.getElementById("d");
+            // a.removeChild(b);
+        }else {
+            console.log("null");
+        }
+    }
+</script>
+
+<style>
+   
+        
+        
+        
+         
+</style>

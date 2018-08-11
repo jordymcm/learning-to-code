@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBcAemkywkpJyIRAa-TBfnbyhrbCxr8GJ0",
+            authDomain: "test-13482.firebaseapp.com",
+            databaseURL: "https://test-13482.firebaseio.com",
+            projectId: "test-13482",
+            storageBucket: "",
+            messagingSenderId: "577292061885"
+          };
+          
+          // connect to your firebase database account
+          firebase.initializeApp(config);
+          
+          // getting refererence to the database
+          var database = firebase.database();
+          
+          // getting a reference to a bit of data in the database
+          var usersRef = database.ref('myapp/users');
+          
+          // listen for changes to the data
+            usersRef.on('value', function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                  var childData = childSnapshot.val();
+                  console.log(childData);
+                  
+                });
+            });
+            
+        </script> 
+   </head> 
+   
+   <body>
+       
+   </body>
+</html>

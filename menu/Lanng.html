@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            background:#000000;
+        }
+        .codearea {
+            resize: none;
+            height: 600px;
+            width: 600px;
+            display: block;
+            padding:1px;
+            float:left;
+            border:none;
+            background:#282828;
+            color:#ffffff;
+            font-size:15px;
+            margin:3px;
+            
+            
+            
+        }
+        
+        #codeLineRaper {
+            /*background: red;*/
+            width: 30px;
+        }
+    
+    #run {
+        float:right;
+        margin-right:70px;
+        background:none;
+        color:#ffffff;
+        border:none;
+        
+    }
+    
+        
+    .noOnClick:focus {
+        outline: none;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    #ca {
+        height:640px;
+        width :670px;
+        border:solid black 2px;
+        display:inline-block;
+        
+        /*display: inline-block;*/
+    }
+    
+    #codeline {
+        
+        /*getridof*/
+        
+        /*display: inline-block;*/
+        
+        padding:1px;
+        margin:1px;
+        float:left;
+        color:#ffffff;
+        font-family:arial;
+    }
+    
+    .testing {
+        border:solid red 2px;
+       
+    }
+    
+    #codeAreaRaper {
+        width: 70px;
+    }
+    
+    </style>
+    
+    
+    <script>
+    
+    // function test() {
+    //     var testing = document.getElementById("codeArea").cursorPosition;
+    //     alert(testing);
+    // }
+        
+        window.onload = function() {
+        //     var text = document.getElementById("codeline");
+            
+        //     text.innerHTML = lines;
+            
+        }
+        
+        // var lines = "1 \n 2";
+        
+        function run() {
+            
+            var theCode = document.getElementById("codeArea").value;
+            
+            localStorage.setItem("saveCode", theCode);
+            
+            var url = "https://learn-to-code-jordymcm.c9users.io/menu/runCode.html";
+            // + "?save=" + theCode;
+            
+            window.open(url);
+        }
+        
+        
+    function isKeyPressed(event) {
+    
+    
+    // console.log(event)
+    
+    if (event["key"] === "Control")
+        
+        while(event["key"] === "Control" == false) {
+            
+        }
+        
+        if (event["key"] === "x") {
+            run();
+        }
+    
+    }
+    
+    // setInterval(function(){;
+        
+    //     // document.getElementById("keyPressChick").click();
+        
+        
+    //     // if (event.shiftKey) {
+                
+    //     // }
+        
+    // },500);
+    
+
+
+             
+        
+    </script>
+    
+</head>
+
+
+<body>
+    
+    <!--<button id="keyPressChick" selected="true" ></button>-->
+    
+    <!--<div id="test">-->
+    <!--    cool-->
+    <!--</div>-->
+    
+    <div>
+        
+        <div id="ca">
+            
+            
+            <!--<div id="codeLineRaper">-->
+                <ul id="codeline">
+                    <!--<li>1</li>-->
+                    <!--<li>2</li>-->
+                    <li>test</li>
+                </ul>
+            <!--</div>-->
+            
+            
+            <!--<font id="codeline" face="Impact" size="100px">hello</text>-->
+            <!--<div id="codeAreaRaper">-->
+                <textarea id="codeArea" class="codearea noOnClick" onkeydown="isKeyPressed(event)"></textarea>
+            <!--</div>-->
+        
+            <button onclick=run() class="noOnClick" id="run"><img src="play.png" height="10" width="10"></img>Run</button>
+        
+        </div>
+        
+        
+        
+    </div>
+    
+    
+    
+</body>

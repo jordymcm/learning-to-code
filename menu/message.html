@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script>
+        
+
+
+        
+            
+                var user = ("");
+                var childData = ("t");
+                var save = {};
+                var to = "";
+                var m = "";
+                var mm = [];
+                
+                
+                      // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyBcAemkywkpJyIRAa-TBfnbyhrbCxr8GJ0",
+                authDomain: "test-13482.firebaseapp.com",
+                databaseURL: "https://test-13482.firebaseio.com",
+                projectId: "test-13482",
+                storageBucket: "",
+                messagingSenderId: "577292061885"
+              };
+          
+          
+          
+              // connect to your firebase database account
+              firebase.initializeApp(config);
+              
+              // getting refererence to the database
+              var database = firebase.database();
+            
+        function addMessage(to, from, message){
+            var messagesRef = database.ref('test/messages');
+            var newMessageRef = messagesRef.push();
+            newMessageRef.set({
+                "to": to,
+                "from": from,
+                "message": message
+            });
+        }
+        
+        function updateMessage(key, to, from, message) {
+            var messageRef = database.ref('test/messages/' + key);
+            messageRef.update({
+                "to": to,
+                "from": from,
+                "message": message
+            });
+        }
+
+
+        //  anObject.keys().filter(key => save[key].to === user).forEach(function(key) {
+        //      console.log('User Message: ', save[key]);
+        //  });
+        
+        function data(){
+        
+             
+            mm = [];
+            console.log(mm);
+             
+            //   getting a reference to a bit of data in the database
+              var usersRef = database.ref('test/messages');
+              
+              // listen for changes to the data
+                usersRef.on('value', function(snapshot) {
+                    
+                    snapshot.forEach(function(childSnapshot) {
+                      childData = childSnapshot.val();
+                      console.log("Done");
+                    //   var key = childSnapshot.key;
+                      
+                     save = childData;
+                     console.log('SAVE: ', save);
+                     if (save.to === user) {
+                         mm.push(save);
+                     }
+                     
+                     
+                    //  const result = save.filter( from=> from.length > 6);
+
+                    // console.log(result);
+                     
+                    //  console.log(childData);  
+                      
+                    });
+                    
+                    console.log (mm);
+                });
+                
+          }
+          
+         function add(){
+            // addMessage()
+             
+         }
+          
+          data();
+            
+            
+            function d(){
+                
+                user = document.getElementById("user").value;
+                
+                
+                
+                console.log(user);
+                
+            }
+            
+            function s(){
+                
+                to = document.getElementById("to").value;
+                m = document.getElementById("ta").value;
+                // console.log(childData);
+                console.log("function called");
+                // data();
+                // save = childData;
+                //       console.log('key: '+key, childData);
+                     
+                //       console.log(save);
+                    console.log(m);
+              
+                    addMessage(to, user, m);
+                    
+                    data();
+            }    
+           
+           
+        //   console.log(childData); 
+        </script>
+        
+       <style>
+          .message {
+              height: 100px;
+              width : 100px;
+              margin: 10px;
+              background-color: white;
+              color: black;
+              resize: none;
+              border: block;
+          }
+        </style>
+   </head> 
+   
+   <body>
+       <input type="text" name="user" id="user" placeholder="user"/>
+       <button onclick=d()>Done</button>
+       
+       <input type="text" name="to" id="to" placeholder="to"/>
+       
+       <textarea id="ta" class="message" type="textarea" name="box" value="" maxlength="1500" placeholder="message"></textarea>
+       
+       <button onclick=s()>Send</button>
+       <button onclick=data()>RL</button>
+   </body> 
+</html>

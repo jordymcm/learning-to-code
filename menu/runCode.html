@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <script defer>
+    
+    var codeInLines = [];
+        
+        window.onload = function() {
+            
+            var query = localStorage.getItem("saveCode");
+            // decodeURI(window.location.search.substring(6));
+            // alert(query);
+            
+            var testing = document.getElementById("test");
+            
+            // testing.innerHTML = query;
+            codeInLines = lineCode(query);
+            runCode();
+            
+            
+        
+            
+        };
+        
+        function lineCode(query) {
+            
+            return query.split("\n");
+            
+        }
+        
+        function runCode() {
+            
+            //console.log()
+            
+            var number1 = "-1"
+            
+            codeInLines.forEach(function(el, i) {
+                
+                number1++;
+                
+                var element = el.trim();
+    
+                // console.log("[" + element + "]");
+                
+                if (element.substring(0,11) === "makeElement") {
+                    
+                    if (element.substring(element.indexOf("("),element.indexOf("(") + 2) === "(\"") {
+                        // console.log(element.substring((element.indexOf("(") + 2),(element.indexOf(")") - 1)));
+                        if  ((element.substring((element.indexOf("(") + 2),(element.indexOf(")") - 1))) === "div") {
+                            
+                            var newElement = document.createElement("div");
+                            
+                            
+                            
+                            console.log(element.indexOf("{"));
+                            
+                            if (element.indexOf("{") > 14) {
+                            
+                            
+                                
+                                var number = "-1";
+                                
+                                var fined = [];
+                                
+                                codeInLines.forEach(function(i) {
+                                    
+                                    number++;
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    fined.push(tf(number, number1, fined));
+                                
+                                    
+                                   
+                                    
+                                    
+                                });
+                                
+                                console.log(fined);
+                                
+                                var stopAt = fined.indexOf("true");
+                                
+                                //run thue {}
+                                
+                                var number2 = "0";
+                                 
+                                for (number2=0; number2 <= stopAt; number2++) {
+                                    
+                                    if (codeInLines[number2].substring(0,5) === "groop") {
+                                        
+                                        console.log(codeInLines[number2].indexOf("=") < codeInLines[number2].indexOf("("));
+                                        
+                                        if(codeInLines[number2].indexOf("=") < codeInLines[number2].indexOf("(")){
+                                            console.log(codeInLines[number2].indexOf("(") !== -1);
+                                            if(codeInLines[number2].indexOf("=") !== -1){
+                                        
+                                                if (codeInLines[number2].substring(codeInLines[number2].indexOf("("), codeInLines[number2].indexOf("(") + 2) === "(\"") {
+                                                    console.log(codeInLines[number2].substring(codeInLines[number2].indexOf("(") + 2, codeInLines[number2].indexOf("\")")));
+                                                    newElement.innerHTML = codeInLines[number2].substring(codeInLines[number2].indexOf("(") + 2, codeInLines[number2].indexOf("\")"));
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                                
+                                
+                            }
+                            
+                            document.getElementById("codeHere").appendChild(newElement);
+                            
+                        } 
+                        
+                        
+                        // if  ((element.substring((element.indexOf("(") + 2),(element.indexOf(")") - 1))) === "button") {
+                            
+                        //     var newElement = document.createElement("button");
+                        //     document.getElementById("codeHere").appendChild(newElement);
+                            
+                        // }  
+                    }
+                }
+    
+            });
+        }
+    
+        
+       
+    
+    
+    function tf( number, number1, fined) {
+        
+        
+        
+            
+       
+        
+        
+        
+        console.log(number + "-" + number1);
+        
+        // return "test";
+        
+        if (number > number1) {
+            
+            // var ifHelper = codeInLines.slice(number, number+1);
+            
+            // var ifHelperTrimed = ifHelper.trim();
+            
+            // console.log("|" + codeInLines.slice(number, number+1) + "|");
+            // console.log(codeInLines[number] === "=");
+            // console.log(number + "|n");
+            
+            
+            
+            if(codeInLines[number] === "}"){
+                
+                var iof = fined.indexOf("true");
+                
+                console.log(iof);
+                console.log(iof === "-1");
+                
+                var answer = setAnswer(fined);
+                
+               
+                
+                if(fined.indexOf("true") > -1){
+                    return("felse")
+                }else {
+                    console.log("true");
+                    return("true");
+                }
+                
+            }else {
+            return("felse");
+        } 
+            
+        }else {
+            return("felse");
+        } 
+    
+    }
+    
+    function setAnswer(fined) {
+        
+        fined.forEach(function(i){
+            
+            
+            
+            
+            
+            
+        });
+                    
+    }
+    
+    
+     
+</script>
+    
+</head>
+
+<body>
+    <!--<div id="test">-->
+        
+    <!--</div>-->
+    
+    <div id="codeHere">
+        
+    </div>
+</body>

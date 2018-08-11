@@ -50,12 +50,26 @@
 </style>
 
 <script>
-    function newPage() {
-        console.log('Hi There')
+    var current_page = 1;
+    var number_of_pages = 2;
+    function toggle_page() {
+        console.log('Hi There');
         var page1 = document.getElementById("page1");
         page1.classList.toggle("hidden");
         var page2 = document.getElementById("page2");
         page2.classList.toggle("hidden");
+    }
+    function next_page(){
+        if (current_page < number_of_pages){
+            current_page++;
+        }
+    }
+    
+    function prev_page(){
+        if (current_page > 1){
+            current_page--;
+        }
+            
     }
 </script>
 
@@ -73,12 +87,12 @@
         I live in a house/cage in Hamsterville squeak squeak.
     </div>
     <div class="buttons">
-        <button onclick="newPage()">next</button>
-        <button onclick="newPage()">back</button>
+        <button onclick="toggle_page()">next</button>
+        <button onclick="toggle_page()">back</button>
     </div>
     
     <div class="numbers">
         
-    <span>page 1</span>    
+    <span id="page_number">page 1</span>    
     </div>
 </body>
